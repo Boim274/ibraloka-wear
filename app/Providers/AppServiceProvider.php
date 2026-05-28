@@ -2,26 +2,29 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\URL;
+use App\Models\Article;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use App\Models\Article;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * Register any application services.
+     */
     public function register(): void
     {
         //
     }
 
+    /**
+     * Bootstrap any application services.
+     */
     public function boot(): void
     {
-        // 🔥 FORCE HTTPS (INI WAJIB)
-        if (config('app.env') === 'production') {
-            URL::forceScheme('https');
+        if (config('app.env') === 'local') {
+            $this->app['url']->forceRootUrl(request()->getSchemeAndHttpHost());
         }
 
-        // Navbar data
         View::composer('components.navbar', function ($view) {
             $navbarCategories = Article::where('is_published', true)
                 ->select('category')
