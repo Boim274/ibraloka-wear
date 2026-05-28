@@ -23,7 +23,7 @@
     <p class="hero-subtitle" style="font-family:var(--font-serif);font-size:clamp(16px,2.5vw,24px);font-weight:300;color:rgba(250,248,244,0.6);margin-bottom:40px;letter-spacing:3px;text-transform:uppercase">Luxury Local Fashion · Crafted with Soul</p>
     <div class="hero-btns" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
       <a href="#produk" class="btn-gold" style="padding:12px 28px;font-size:11px">Lihat Koleksi</a>
-      <a href="#about" class="btn-ghost" style="padding:12px 28px;font-size:11px">Tentang Kami</a>
+      <a href="#about" class="btn-ghost" style="padding:12px 28px;font-size:11px">Tentang Kami.</a>
     </div>
   </div>
   <div class="hero-badge" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(250,248,244,0.4);font-size:10px;letter-spacing:2px;text-transform:uppercase;animation:bounce 2s infinite">
