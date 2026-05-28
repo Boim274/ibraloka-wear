@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if (config('app.env') === 'local') {
-            $this->app['url']->forceRootUrl(request()->getSchemeAndHttpHost());
+            $this->app->make('url')->forceRootUrl(request()->getSchemeAndHttpHost());
         }
 
         View::composer('components.navbar', function ($view) {
