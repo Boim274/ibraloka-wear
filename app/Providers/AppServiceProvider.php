@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -19,10 +20,12 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
+
     public function boot(): void
     {
-        if (config('app.env') === 'local') {
-            $this->app->make('url')->forceRootUrl(request()->getSchemeAndHttpHost());
+        // FORCE HTTPS di production
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
         }
 
         View::composer('components.navbar', function ($view) {
