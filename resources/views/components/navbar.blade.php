@@ -51,8 +51,10 @@
         </form>
       </span>
     @else
-      <a href="#" onclick="openModal('signin')" class="btn-ghost" style="text-decoration:none">Sign In</a>
-      <a href="#" onclick="openModal('signup')" class="btn-gold" style="text-decoration:none">Sign Up</a>
+      <span class="guest-auth-buttons" style="display:flex;gap:10px;align-items:center">
+        <a href="#" onclick="openModal('signin')" class="btn-ghost" style="text-decoration:none">Sign In</a>
+        <a href="#" onclick="openModal('signup')" class="btn-gold" style="text-decoration:none">Sign Up</a>
+      </span>
     @endauth
     <button class="hamburger" @click="open = !open" style="display:none;background:none;border:none;color:rgba(250,248,244,0.75);font-size:24px;cursor:pointer;padding:4px;width:40px;height:40px;border-radius:6px;transition:all .25s" aria-label="Toggle menu">
       <span x-show="!open" style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">
@@ -222,6 +224,7 @@
   nav > .nav-links { display: none !important; }
   nav > .nav-auth .hamburger { display: block !important; }
   nav > .nav-auth .desktop-auth-buttons { display: none !important; }
+  nav > .nav-auth .guest-auth-buttons { display: none !important; }
   nav > .nav-auth .cart-icon-mobile { padding: 10px 14px !important; font-size: 16px !important; }
   nav { padding: 0 20px !important; }
 }
