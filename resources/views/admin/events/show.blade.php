@@ -14,7 +14,7 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         @if ($event->image)
                             <div class="md:w-1/2">
-                                <img src="{{ Storage::url($event->image) }}" alt="{{ $event->title }}" class="w-full rounded-lg">
+                                <img src="{{ asset('images/' . $event->image) }}" alt="{{ $event->title }}" class="w-full rounded-lg">
                             </div>
                         @endif
                         <div class="{{ $event->image ? 'md:w-1/2' : 'w-full' }}">

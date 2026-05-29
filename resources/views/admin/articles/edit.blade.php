@@ -57,7 +57,7 @@
                             <label for="image" class="block text-sm font-medium text-surface-200 mb-1">Image</label>
                             @if ($article->image)
                                 <div class="mb-2">
-                                    <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-32 h-32 object-cover rounded-lg">
+                                    <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-32 h-32 object-cover rounded-lg">
                                 </div>
                             @endif
                             <input type="file" name="image" id="image" class="w-full px-4 py-2 bg-surface-800 border border-surface-600 rounded-lg text-surface-50 focus:border-gold-500 focus:ring-gold-500">

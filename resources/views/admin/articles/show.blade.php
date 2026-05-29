@@ -28,7 +28,7 @@
 
                     @if ($article->image)
                         <div class="mb-6">
-                            <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-full max-w-2xl rounded-lg">
+                            <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full max-w-2xl rounded-lg">
                         </div>
                     @endif
 

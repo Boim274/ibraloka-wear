@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ArticleController extends Controller
 {
@@ -33,7 +33,9 @@ class ArticleController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('articles', 'public');
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $filename);
+            $validated['image'] = $filename;
         }
 
         $validated['is_published'] = $request->boolean('is_published');
@@ -68,9 +70,11 @@ class ArticleController extends Controller
 
         if ($request->hasFile('image')) {
             if ($article->image) {
-                Storage::disk('public')->delete($article->image);
+                File::delete(public_path('images/' . $article->image));
             }
-            $validated['image'] = $request->file('image')->store('articles', 'public');
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $filename);
+            $validated['image'] = $filename;
         }
 
         $validated['is_published'] = $request->boolean('is_published');
@@ -84,7 +88,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         if ($article->image) {
-            Storage::disk('public')->delete($article->image);
+            File::delete(public_path('images/' . $article->image));
         }
         $article->delete();
 

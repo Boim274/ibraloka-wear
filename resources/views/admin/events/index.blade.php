@@ -42,7 +42,7 @@
                                     <td class="px-4 py-3">{{ $events->firstItem() + $index }}</td>
                                     <td class="px-4 py-3">
                                         @if ($event->image)
-                                            <img src="{{ Storage::url($event->image) }}" alt="{{ $event->title }}" class="w-14 h-14 object-cover rounded-lg">
+                                            <img src="{{ asset('images/' . $event->image) }}" alt="{{ $event->title }}" class="w-14 h-14 object-cover rounded-lg">
                                         @else
                                             <span class="text-surface-500 text-xs">-</span>
                                         @endif

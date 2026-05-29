@@ -71,7 +71,7 @@
                                 <td class="px-4 py-3">
                                     <div class="flex items-center gap-2">
                                         @if ($item->product->image)
-                                            <img src="{{ Storage::url($item->product->image) }}" alt="{{ $item->product->name }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                                            <img src="{{ asset('images/' . $item->product->image) }}" alt="{{ $item->product->name }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
                                         @endif
                                         <span class="text-surface-200">{{ $item->product->name }}</span>
                                     </div>

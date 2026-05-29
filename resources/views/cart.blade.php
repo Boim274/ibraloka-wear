@@ -33,7 +33,7 @@
                                     @php $subtotal = $product->price * $details['quantity']; $total += $subtotal; @endphp
                                     <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
                                         <td style="padding:20px;display:flex;align-items:center;gap:16px">
-                                            <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}" style="width:64px;height:64px;object-fit:cover;border:1px solid rgba(201,168,76,0.1)">
+                                            <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" style="width:64px;height:64px;object-fit:cover;border:1px solid rgba(201,168,76,0.1)">
                                             <div>
                                                 <div style="font-family:var(--font-serif);font-size:16px;color:var(--color-surface-50);font-weight:400;margin-bottom:2px">{{ $product->name }}</div>
                                                 <span style="font-size:10px;color:rgba(250,248,244,0.3);letter-spacing:1.5px;text-transform:uppercase">{{ $product->category }}</span>

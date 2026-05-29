@@ -3,7 +3,7 @@
     <div class="relative pt-28">
         <div class="absolute inset-0 overflow-hidden">
             @if($article->image)
-            <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover opacity-30">
+            <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover opacity-30">
             @endif
             <div class="absolute inset-0" style="background:linear-gradient(180deg,var(--color-surface) 0%,var(--color-surface-700) 40%,var(--color-surface) 100%)"></div>
         </div>
@@ -32,7 +32,7 @@
         <div class="max-w-3xl mx-auto section-padding">
             @if($article->image)
             <div class="rounded-xl overflow-hidden mb-10">
-                <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-full object-cover">
+                <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full object-cover">
             </div>
             @endif
 
@@ -71,7 +71,7 @@
                     <a href="{{ route('artikel.show', [$rel->category, $rel->slug]) }}" class="group rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5" style="background:var(--color-surface-600);border:1px solid rgba(201,168,76,0.06)">
                         <div class="aspect-[16/9] overflow-hidden">
                             @if($rel->image)
-                            <img src="{{ Storage::url($rel->image) }}" alt="{{ $rel->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="{{ asset('images/' . $rel->image) }}" alt="{{ $rel->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             @else
                             <div class="w-full h-full flex items-center justify-center" style="background:var(--color-surface-700)">
                                 <svg class="w-8 h-8 text-surface-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>

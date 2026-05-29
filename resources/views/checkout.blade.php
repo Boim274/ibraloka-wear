@@ -15,7 +15,7 @@
                         @if ($product)
                             <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04)">
                                 <div style="display:flex;align-items:center;gap:12px">
-                                    <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}" style="width:44px;height:44px;object-fit:cover;border:1px solid rgba(201,168,76,0.08)">
+                                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" style="width:44px;height:44px;object-fit:cover;border:1px solid rgba(201,168,76,0.08)">
                                     <div>
                                         <div style="font-family:var(--font-serif);font-size:15px;color:var(--color-surface-50)">{{ $product->name }}</div>
                                         <span style="font-size:11px;color:rgba(250,248,244,0.3)">{{ $details['quantity'] }} &times; Rp {{ number_format($product->price, 0, ',', '.') }}</span>

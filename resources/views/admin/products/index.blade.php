@@ -42,7 +42,7 @@
                                     <td class="px-4 py-3">{{ $products->firstItem() + $index }}</td>
                                     <td class="px-4 py-3">
                                         @if ($product->image)
-                                            <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}" class="w-14 h-14 object-cover rounded-lg">
+                                            <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" class="w-14 h-14 object-cover rounded-lg">
                                         @else
                                             <span class="text-surface-500 text-xs">-</span>
                                         @endif

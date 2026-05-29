@@ -41,7 +41,7 @@
                                     <td class="px-4 py-3">{{ $galleries->firstItem() + $index }}</td>
                                     <td class="px-4 py-3">
                                         @if ($gallery->image)
-                                            <img src="{{ Storage::url($gallery->image) }}" alt="{{ $gallery->title }}" class="w-16 h-16 object-cover rounded-lg">
+                                            <img src="{{ asset('images/' . $gallery->image) }}" alt="{{ $gallery->title }}" class="w-16 h-16 object-cover rounded-lg">
                                         @else
                                             <span class="text-surface-400">-</span>
                                         @endif

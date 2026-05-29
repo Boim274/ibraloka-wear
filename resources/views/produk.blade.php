@@ -18,7 +18,7 @@
                 @foreach ($products as $product)
                     <div class="product-card fade-up" style="background: var(--color-surface-700); border: 1px solid rgba(201, 168, 76, 0.15); border-radius: 0;">
                         <div style="position: relative; overflow: hidden; aspect-ratio: 1;">
-                            <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
                             @if ($product->category)
                                 <span style="position: absolute; top: 12px; left: 12px; background: #C9A84C; color: #000; padding: 4px 12px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">{{ $product->category }}</span>
                             @endif

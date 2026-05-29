@@ -55,7 +55,7 @@
                     @foreach ($order->items as $item)
                         <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04)">
                             <div style="display:flex;align-items:center;gap:14px">
-                                <img src="{{ Storage::url($item->product->image) }}" alt="{{ $item->product->name }}" style="width:48px;height:48px;object-fit:cover;border:1px solid rgba(201,168,76,0.08)">
+                                <img src="{{ asset('images/' . $item->product->image) }}" alt="{{ $item->product->name }}" style="width:48px;height:48px;object-fit:cover;border:1px solid rgba(201,168,76,0.08)">
                                 <div>
                                     <div style="font-family:var(--font-serif);font-size:15px;color:var(--color-surface-50)">{{ $item->product->name }}</div>
                                     <span style="font-size:11px;color:rgba(250,248,244,0.3)">{{ $item->quantity }} &times; Rp {{ number_format($item->price, 0, ',', '.') }}</span>

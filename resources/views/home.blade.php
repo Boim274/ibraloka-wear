@@ -1,4 +1,4 @@
-ï»¿<x-layouts.public>
+<x-layouts.public>
 @section('title', 'IbraLoka Wear - Local Luxury Fashion')
 
 <!-- HERO -->
@@ -18,9 +18,9 @@
     </div>
   </div>
   <div class="hero-content" style="position:relative;z-index:2;max-width:800px;padding:0 20px">
-    <span class="section-tag" style="margin-bottom:24px;text-align:center">Est. 2022 Â· Jakarta, Indonesia</span>
+    <span class="section-tag" style="margin-bottom:24px;text-align:center">Est. 2022 · Jakarta, Indonesia</span>
     <h1 class="hero-title" style="font-family:var(--font-serif);font-size:clamp(56px,8vw,100px);font-weight:300;line-height:1;color:var(--color-surface-50);margin-bottom:10px">Ibra<span style="color:var(--color-gold);font-style:italic">Loka</span><br>Wear</h1>
-    <p class="hero-subtitle" style="font-family:var(--font-serif);font-size:clamp(16px,2.5vw,24px);font-weight:300;color:rgba(250,248,244,0.6);margin-bottom:40px;letter-spacing:3px;text-transform:uppercase">Luxury Local Fashion Â· Crafted with Soul</p>
+    <p class="hero-subtitle" style="font-family:var(--font-serif);font-size:clamp(16px,2.5vw,24px);font-weight:300;color:rgba(250,248,244,0.6);margin-bottom:40px;letter-spacing:3px;text-transform:uppercase">Luxury Local Fashion · Crafted with Soul</p>
     <div class="hero-btns" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
       <a href="#produk" class="btn-gold" style="padding:12px 28px;font-size:11px">Lihat Koleksi</a>
       <a href="#about" class="btn-ghost" style="padding:12px 28px;font-size:11px">Tentang Kami.</a>
@@ -40,7 +40,7 @@
       <h2 class="section-title">Lahir dari <em>Jiwa</em><br>Lokal</h2>
       <div class="section-divider"></div>
       <p style="color:rgba(250,248,244,0.7);margin-bottom:20px;line-height:1.9;font-weight:300">IbraLoka Wear adalah brand fashion lokal Indonesia yang berdiri sejak tahun 2022 di Jakarta. Kami lahir dari kecintaan mendalam terhadap seni berpakaian yang menggabungkan estetika modern dengan jiwa budaya lokal yang kaya.</p>
-      <p style="color:rgba(250,248,244,0.7);margin-bottom:20px;line-height:1.9;font-weight:300">Nama "IbraLoka" berasal dari dua kata: <em style="color:var(--color-gold)">Ibra</em> â€” yang berarti kebebasan berekspresi â€” dan <em style="color:var(--color-gold)">Loka</em> â€” bahasa Sansekerta untuk dunia atau tempat. Bersama, kami menciptakan dunia mode yang bebas, berani, dan autentik.</p>
+      <p style="color:rgba(250,248,244,0.7);margin-bottom:20px;line-height:1.9;font-weight:300">Nama "IbraLoka" berasal dari dua kata: <em style="color:var(--color-gold)">Ibra</em> — yang berarti kebebasan berekspresi — dan <em style="color:var(--color-gold)">Loka</em> — bahasa Sansekerta untuk dunia atau tempat. Bersama, kami menciptakan dunia mode yang bebas, berani, dan autentik.</p>
       <p style="color:rgba(250,248,244,0.7);margin-bottom:20px;line-height:1.9;font-weight:300">Setiap koleksi kami dirancang dengan memperhatikan detail, menggunakan bahan premium lokal pilihan, dan diproduksi secara etis oleh pengrajin Indonesia terampil. Kami percaya bahwa fashion lokal mampu bersaing dan bahkan melampaui standar internasional.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px">
         <div class="stat-box"><span class="stat-num">3+</span><span class="stat-label">Tahun Berdiri</span></div>
@@ -79,7 +79,7 @@
     <div class="fade-up" style="display:flex;flex-direction:column;gap:16px">
       <div class="p-highlight">
         <h4>Penghargaan</h4>
-        <p style="font-size:12px;color:rgba(250,248,244,0.55);font-weight:300;margin:0">Best Local Fashion Brand 2023 â€” Jakarta Fashion Week. Top 10 Indonesian Brand to Watch 2024 oleh Vogue Indonesia.</p>
+        <p style="font-size:12px;color:rgba(250,248,244,0.55);font-weight:300;margin:0">Best Local Fashion Brand 2023 — Jakarta Fashion Week. Top 10 Indonesian Brand to Watch 2024 oleh Vogue Indonesia.</p>
       </div>
       <div class="p-highlight">
         <h4>Kolaborasi</h4>
@@ -106,7 +106,7 @@
     <div class="visi-card fade-up">
       <div class="visi-card-num">V</div>
       <h3>Visi</h3>
-      <p style="color:rgba(250,248,244,0.7);font-weight:300;margin-bottom:20px;line-height:1.9">Menjadi brand fashion lokal Indonesia yang paling diakui secara global â€” simbol kreativitas, kualitas, dan kebanggaan budaya bangsa pada tahun 2030.</p>
+      <p style="color:rgba(250,248,244,0.7);font-weight:300;margin-bottom:20px;line-height:1.9">Menjadi brand fashion lokal Indonesia yang paling diakui secara global — simbol kreativitas, kualitas, dan kebanggaan budaya bangsa pada tahun 2030.</p>
     </div>
     <div class="visi-card fade-up">
       <div class="visi-card-num">M</div>
@@ -128,14 +128,14 @@
     <span class="section-tag">Koleksi Kami</span>
     <h2 class="section-title">Produk &<br><em>Layanan</em></h2>
     <div class="section-divider"></div>
-    <p style="color:rgba(250,248,244,0.6);font-weight:300">Koleksi unggulan kami dirancang untuk menemani setiap momen hidupmu â€” dari pagi yang kasual hingga malam yang penuh keanggunan.</p>
+    <p style="color:rgba(250,248,244,0.6);font-weight:300">Koleksi unggulan kami dirancang untuk menemani setiap momen hidupmu — dari pagi yang kasual hingga malam yang penuh keanggunan.</p>
   </div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
     @forelse($featuredProducts as $product)
     <div class="product-card fade-up">
       <div class="product-img-placeholder" style="position:relative;overflow:hidden">
         @if($product->image)
-          <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}" style="width:100%;height:100%;object-fit:cover;opacity:0.6">
+          <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" style="width:100%;height:100%;object-fit:cover;opacity:0.6">
         @endif
         <div class="product-name">{{ $product->name }}</div>
         <div class="product-overlay">
@@ -174,7 +174,7 @@
       @endphp
       <div class="g-item fade-up" style="{{ $span }}">
         <div class="g-img">
-          <img src="{{ Storage::url($g->image) }}" alt="{{ $g->title ?? 'Galeri' }}" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+          <img src="{{ asset('images/' . $g->image) }}" alt="{{ $g->title ?? 'Galeri' }}" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
           <div class="g-overlay"></div>
           <div class="g-label">{{ $g->title ?? 'Galeri' }}</div>
         </div>
@@ -256,7 +256,7 @@
       @forelse($articles as $article)
       <a href="{{ route('artikel.show', ['kategori' => $article->category, 'slug' => $article->slug]) }}" class="artikel-card fade-up" style="text-decoration:none">
         <div style="flex-shrink:0;width:80px;height:60px;overflow:hidden;border:1px solid rgba(201,168,76,0.15)">
-          <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+          <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
         </div>
         <div>
           <span class="art-cat">{{ $article->category }}</span>
@@ -309,7 +309,7 @@
     @foreach ($events as $event)
     <div class="event-card fade-up">
       <div style="height:160px;overflow:hidden;margin-bottom:16px;position:relative">
-        <img src="{{ Storage::url($event->image) }}" alt="{{ $event->title }}" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+        <img src="{{ asset('images/' . $event->image) }}" alt="{{ $event->title }}" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
       </div>
       <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:20px">
         <div class="edb-box"><div class="ed">{{ $event->event_date->format('d') }}</div><div class="em">{{ $event->event_date->format('M Y') }}</div></div>
@@ -317,8 +317,8 @@
       <h4>{{ $event->title }}</h4>
       <p>{{ $event->description }}</p>
       <div class="event-meta" style="display:flex;gap:20px">
-        <span style="font-size:10px;color:rgba(250,248,244,0.4);letter-spacing:1px">ðŸ“ {{ $event->location }}</span>
-        <span style="font-size:10px;color:rgba(250,248,244,0.4);letter-spacing:1px">ðŸ• {{ $event->event_date->format('H.i') }} WIB</span>
+        <span style="font-size:10px;color:rgba(250,248,244,0.4);letter-spacing:1px">?? {{ $event->location }}</span>
+        <span style="font-size:10px;color:rgba(250,248,244,0.4);letter-spacing:1px">?? {{ $event->event_date->format('H.i') }} WIB</span>
       </div>
     </div>
     @endforeach
@@ -390,7 +390,7 @@
           <option>Lainnya</option>
         </select>
         <textarea name="message" class="modal-input" placeholder="Pesan Anda..." required style="height:140px;resize:none"></textarea>
-        <button type="submit" class="btn-gold" style="border:none;width:100%;padding:16px;font-size:12px;letter-spacing:3px;cursor:pointer">Kirim Pesan â†—</button>
+        <button type="submit" class="btn-gold" style="border:none;width:100%;padding:16px;font-size:12px;letter-spacing:3px;cursor:pointer">Kirim Pesan ?</button>
       </form>
     </div>
   </div>

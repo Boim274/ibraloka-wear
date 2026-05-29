@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class GalleryController extends Controller
 {
@@ -30,7 +30,9 @@ class GalleryController extends Controller
             'is_featured' => 'boolean',
         ]);
 
-        $validated['image'] = $request->file('image')->store('galleries', 'public');
+        $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+        $request->file('image')->move(public_path('images'), $filename);
+        $validated['image'] = $filename;
         $validated['is_featured'] = $request->boolean('is_featured');
 
         Gallery::create($validated);
@@ -61,9 +63,11 @@ class GalleryController extends Controller
 
         if ($request->hasFile('image')) {
             if ($gallery->image) {
-                Storage::disk('public')->delete($gallery->image);
+                File::delete(public_path('images/' . $gallery->image));
             }
-            $validated['image'] = $request->file('image')->store('galleries', 'public');
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $filename);
+            $validated['image'] = $filename;
         }
 
         $validated['is_featured'] = $request->boolean('is_featured');
@@ -77,7 +81,7 @@ class GalleryController extends Controller
     public function destroy(Gallery $gallery)
     {
         if ($gallery->image) {
-            Storage::disk('public')->delete($gallery->image);
+            File::delete(public_path('images/' . $gallery->image));
         }
         $gallery->delete();
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
 {
@@ -32,7 +32,9 @@ class EventController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('events', 'public');
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $filename);
+            $validated['image'] = $filename;
         }
 
         $validated['is_published'] = $request->boolean('is_published');
@@ -66,9 +68,11 @@ class EventController extends Controller
 
         if ($request->hasFile('image')) {
             if ($event->image) {
-                Storage::disk('public')->delete($event->image);
+                File::delete(public_path('images/' . $event->image));
             }
-            $validated['image'] = $request->file('image')->store('events', 'public');
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $filename);
+            $validated['image'] = $filename;
         }
 
         $validated['is_published'] = $request->boolean('is_published');
@@ -82,7 +86,7 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         if ($event->image) {
-            Storage::disk('public')->delete($event->image);
+            File::delete(public_path('images/' . $event->image));
         }
         $event->delete();
 

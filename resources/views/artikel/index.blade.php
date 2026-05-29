@@ -48,7 +48,7 @@
                     <div class="md:flex">
                         <div class="md:w-3/5 overflow-hidden relative min-h-[280px]">
                             @if($featured->image)
-                            <img src="{{ Storage::url($featured->image) }}" alt="{{ $featured->title }}" class="w-full h-full absolute inset-0 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <img src="{{ asset('images/' . $featured->image) }}" alt="{{ $featured->title }}" class="w-full h-full absolute inset-0 object-cover transition-transform duration-700 group-hover:scale-105">
                             @else
                             <div class="w-full h-full absolute inset-0 flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-surface-700),var(--color-surface-800))">
                                 <svg class="w-16 h-16 text-surface-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
@@ -85,7 +85,7 @@
                     <a href="{{ route('artikel.show', [$article->category, $article->slug]) }}" class="group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background:var(--color-surface-600);border:1px solid rgba(201,168,76,0.06);">
                         <div class="aspect-[16/10] overflow-hidden relative">
                             @if($article->image)
-                            <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             @else
                             <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-surface-700),var(--color-surface-800))">
                                 <svg class="w-10 h-10 text-surface-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
