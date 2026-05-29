@@ -33,21 +33,23 @@
   @php $cartCount = count(session()->get('cart', [])); @endphp
   <div class="nav-auth" style="display:flex;gap:10px;align-items:center">
     @auth
-      <a href="{{ route('cart') }}" style="position:relative;color:rgba(250,248,244,0.75);text-decoration:none;font-size:14px;padding:6px 10px">
+      <a href="{{ route('cart') }}" class="cart-icon-mobile" style="position:relative;color:rgba(250,248,244,0.75);text-decoration:none;font-size:14px;padding:8px 12px">
         🛒
         @if ($cartCount > 0)
           <span style="position:absolute;top:-2px;right:-2px;background:#C9A84C;color:#000;font-size:10px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">{{ $cartCount }}</span>
         @endif
       </a>
-      @if (Auth::user()->isAdmin())
-        <a href="{{ route('dashboard') }}" class="btn-gold" style="text-decoration:none">Dashboard</a>
-      @else
-        <a href="{{ route('orders.index') }}" class="btn-ghost" style="text-decoration:none">Pesanan Saya</a>
-      @endif
-      <form method="POST" action="{{ route('logout') }}" style="display:inline">
-        @csrf
-        <button type="submit" class="btn-ghost" style="border:none;cursor:pointer;font-family:'Montserrat',sans-serif">Logout</button>
-      </form>
+      <span class="desktop-auth-buttons" style="display:flex;gap:10px;align-items:center">
+        @if (Auth::user()->isAdmin())
+          <a href="{{ route('dashboard') }}" class="btn-gold" style="text-decoration:none">Dashboard</a>
+        @else
+          <a href="{{ route('orders.index') }}" class="btn-ghost" style="text-decoration:none">Pesanan Saya</a>
+        @endif
+        <form method="POST" action="{{ route('logout') }}" style="display:inline">
+          @csrf
+          <button type="submit" class="btn-ghost" style="border:none;cursor:pointer;font-family:'Montserrat',sans-serif">Logout</button>
+        </form>
+      </span>
     @else
       <a href="#" onclick="openModal('signin')" class="btn-ghost" style="text-decoration:none">Sign In</a>
       <a href="#" onclick="openModal('signup')" class="btn-gold" style="text-decoration:none">Sign Up</a>
@@ -79,8 +81,16 @@
         {{-- Mobile Header --}}
         <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(201,168,76,0.08);flex-shrink:0">
           <div style="display:flex;align-items:center;gap:10px">
+            @auth
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#000;font-family:var(--font-serif);text-transform:uppercase">{{ substr(Auth::user()->name, 0, 1) }}</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--color-surface-50);line-height:1.2">{{ Auth::user()->name }}</div>
+              <div style="font-size:9px;color:rgba(250,248,244,0.3);letter-spacing:0.5px">{{ Auth::user()->email }}</div>
+            </div>
+            @else
             <div style="width:32px;height:32px;border-radius:6px;background:var(--color-gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#000;font-family:var(--font-serif)">IL</div>
             <span class="nav-brand" style="font-size:16px">Ibra<span>Loka</span></span>
+            @endauth
           </div>
           <button @click="open=false" style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(201,168,76,0.15);background:transparent;color:var(--color-surface-50);cursor:pointer;display:flex;align-items:center;justify-content:center">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -211,6 +221,8 @@
 @media (max-width: 1024px) {
   nav > .nav-links { display: none !important; }
   nav > .nav-auth .hamburger { display: block !important; }
+  nav > .nav-auth .desktop-auth-buttons { display: none !important; }
+  nav > .nav-auth .cart-icon-mobile { padding: 10px 14px !important; font-size: 16px !important; }
   nav { padding: 0 20px !important; }
 }
 </style>

@@ -841,6 +841,7 @@
         .sidebar {
             transform: translateX(-100%);
             transition: transform .3s ease;
+            z-index: 1000;
         }
         .sidebar.open {
             transform: translateX(0);
@@ -855,6 +856,39 @@
             padding: 12px 16px;
         }
     }
+}
+
+/* Admin responsive */
+@media (max-width: 768px) {
+  .admin-main { padding: 16px !important; }
+  .admin-panel .card-surface.overflow-hidden { overflow-x: auto !important; }
+  .admin-panel .card-surface.overflow-hidden table { min-width: 600px !important; }
+  .admin-panel .flex.items-center.gap-4 { flex-wrap: wrap !important; }
+  .admin-panel .flex.items-center.gap-4 > * { flex: 1 1 auto !important; text-align: center !important; }
+  .admin-panel .flex.justify-between.items-center.mb-6 { flex-direction: column !important; gap: 12px !important; align-items: stretch !important; text-align: center !important; }
+  .admin-panel .flex.justify-between.items-center.mb-6 > a { text-align: center !important; }
+  .admin-panel .py-12 { padding-top: 8px !important; padding-bottom: 24px !important; }
+  .admin-panel .max-w-7xl, .admin-panel .max-w-4xl, .admin-panel .max-w-3xl { padding-left: 0 !important; padding-right: 0 !important; }
+  .admin-panel .card-surface .p-6 { padding: 12px !important; }
+  /* Dashboard stats */
+  .admin-panel .grid.grid-cols-1 { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+  .admin-panel .grid.grid-cols-1 > * { width: 100% !important; }
+  /* Dashboard charts */
+  .admin-panel .grid.grid-cols-1.lg\:grid-cols-2 { display: flex !important; flex-direction: column !important; gap: 12px !important; }
+  /* Dashboard management cards */
+  .admin-panel .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+  .admin-panel .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 > a { width: 100% !important; }
+  /* Order show - payment proof */
+  .admin-panel a[target="_blank"] { flex-direction: column !important; align-items: flex-start !important; }
+  .admin-panel a[target="_blank"] img { max-width: 100% !important; }
+  /* Form inline items (articles create) */
+  .admin-panel .mb-4.flex.items-center.gap-4 { flex-direction: column !important; align-items: stretch !important; }
+  .admin-panel .mb-4.flex.items-center.gap-4 > div { width: 100% !important; }
+  /* Status update form (orders show) */
+  .admin-panel .flex.items-center.gap-2 form, 
+  .admin-panel .flex.items-center.gap-2 { flex-wrap: wrap !important; gap: 8px !important; }
+  .admin-panel .flex.items-center.gap-2 select { width: 100% !important; }
+  .admin-panel .flex.items-center.gap-2 button { width: 100% !important; }
 }
 
 /* Admin theme overrides */
@@ -918,12 +952,16 @@
 
   /* Visi Misi */
   #visi > div:first-of-type { grid-template-columns: 1fr !important; gap: 24px !important; }
+  #visi .visi-card ul { padding-left: 18px !important; }
+  #visi .visi-card ul li { font-size: 13px !important; line-height: 1.7 !important; margin-bottom: 10px !important; }
 
   /* Produk */
-  #produk > div:last-of-type { grid-template-columns: 1fr 1fr !important; }
+  #produk > div:last-of-type { grid-template-columns: 1fr 1fr !important; gap: 4px !important; }
   #produk .product-img-placeholder { padding: 30px !important; }
   #produk .product-img-placeholder > div:first-child { font-size: 32px !important; }
   #produk .product-name { font-size: 11px !important; letter-spacing: 2px !important; }
+  #produk .product-overlay h4 { font-size: 14px !important; }
+  #produk .product-overlay p { font-size: 11px !important; }
 
   /* Galeri - stack all items */
   #galeri > div:first-of-type {
@@ -940,14 +978,18 @@
 
   /* Artikel */
   #artikel > div:first-of-type { grid-template-columns: 1fr !important; gap: 30px !important; }
+  #artikel .artikel-card { padding: 12px !important; }
+  #artikel .artikel-card > div:first-child { width: 60px !important; height: 50px !important; }
 
   /* Event */
   #event > div:first-of-type { grid-template-columns: 1fr !important; gap: 16px !important; }
+  #event .event-card > div:first-child { height: 140px !important; }
 
   /* Kontak */
   #kontak > div:first-of-type { grid-template-columns: 1fr !important; gap: 40px !important; }
   #kontak .kontak-form > div:first-child { grid-template-columns: 1fr !important; gap: 16px !important; }
   #kontak h3 { font-size: 28px !important; }
+  #kontak .k-item { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
 
   /* Modal */
   #authModal .modal { padding: 30px 24px !important; margin: 0 16px !important; max-width: 100% !important; }
@@ -958,6 +1000,20 @@
 
   /* Scroll to Top */
   #scrollTopBtn { bottom: 20px !important; right: 20px !important; width: 42px !important; height: 42px !important; font-size: 18px !important; }
+}
+
+@media (width <= 480px) {
+  #produk > div:last-of-type { grid-template-columns: 1fr !important; }
+  #produk .product-overlay { padding: 16px !important; }
+  #produk .product-overlay h4 { font-size: 13px !important; }
+  #produk .product-overlay p { display: none !important; }
+  #klien > div:nth-of-type(3) { grid-template-columns: 1fr !important; }
+  #klien .client-logo-box { padding: 16px !important; }
+  #klien .client-logo-box > div:first-child { font-size: 24px !important; }
+  #klien .client-logo-box > div:last-child { font-size: 10px !important; }
+  #event .event-card > div:first-child { height: 120px !important; }
+  .hero-btns { flex-direction: column !important; align-items: stretch !important; }
+  .hero-btns a { text-align: center !important; }
 }
 
 @media (width >= 769px) and (width <= 1024px) {
@@ -976,3 +1032,6 @@
 
   footer > div:first-child { gap: 30px !important; }
 }
+
+/* Touch-friendly buttons */
+.btn-gold, .btn-ghost, .btn-primary, .hero-btns a { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }

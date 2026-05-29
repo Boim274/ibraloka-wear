@@ -18,7 +18,7 @@
             <div class="main-content flex-1" style="flex:1;margin-left:250px;min-height:100vh;display:flex;flex-direction:column">
                 <div class="topbar">
                     <div style="display:flex;align-items:center;gap:12px">
-                        <button class="sidebar-hamburger" @click="document.querySelector('.sidebar')?.classList.toggle('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+                        <button class="sidebar-hamburger" @click="$dispatch('toggle-sidebar')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
                         @yield('header')
                     </div>
                     <div class="topbar-actions">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <main style="flex:1;padding:24px 32px;background:var(--color-surface)">
+                <main class="admin-main" style="flex:1;padding:24px 32px;background:var(--color-surface)">
                     @yield('content')
                 </main>
 

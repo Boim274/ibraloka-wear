@@ -1,4 +1,5 @@
-<nav class="sidebar" x-data="sidebar" :class="{ 'open': open }">
+<nav class="sidebar" x-data="sidebar" @toggle-sidebar.window="open = !open" @keydown.escape.window="open = false" :class="{ 'open': open }">
+    <div x-show="open" @click="open = false" class="sidebar-backdrop" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:-1"></div>
     <div class="sidebar-logo">
         <a href="{{ route('dashboard') }}" class="flex items-center gap-2 text-decoration-none">
             <div class="nav-logo-icon"><span>IL</span></div>
