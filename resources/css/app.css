@@ -995,9 +995,6 @@
   #authModal .modal { padding: 30px 24px !important; margin: 0 16px !important; max-width: 100% !important; }
   #authModal .modal h2 { font-size: 26px !important; }
 
-  /* Navbar */
-  nav { padding: 0 16px !important; }
-
   /* Scroll to Top */
   #scrollTopBtn { bottom: 20px !important; right: 20px !important; width: 42px !important; height: 42px !important; font-size: 18px !important; }
 }

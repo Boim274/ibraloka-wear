@@ -4,7 +4,7 @@
     $isArtikel = $route === 'artikel' || $route === 'artikel.show' || request()->is('artikel*');
     function navActive($condition) { return $condition ? 'color:var(--color-gold) !important;background:rgba(201,168,76,0.1);' : ''; }
 @endphp
-<nav x-data="{ open: false }" style="position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,0.96);border-bottom:1px solid rgba(201,168,76,0.2);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:70px;backdrop-filter:blur(8px)">
+<nav x-data="{ open: false }" class="main-nav" style="position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,0.96);border-bottom:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:space-between;height:70px;backdrop-filter:blur(8px)">
   <div class="nav-logo" style="display:flex;align-items:center;gap:14px">
     <div class="nav-logo-icon"><span>IL</span></div>
     <a href="{{ route('home') }}" class="nav-brand">Ibra<span>Loka</span> Wear</a>
@@ -217,15 +217,22 @@
 </nav>
 
 <style>
+.main-nav { padding: 0 60px; }
 .dropdown:hover .dropdown-menu { display: block !important; }
 .nav-links > a:hover, .dropdown-menu a:hover { color: var(--color-gold) !important; background: rgba(201,168,76,0.08); }
 .nav-links > a.active { color: var(--color-gold) !important; background: rgba(201,168,76,0.1); }
 @media (max-width: 1024px) {
-  nav > .nav-links { display: none !important; }
-  nav > .nav-auth .hamburger { display: block !important; }
-  nav > .nav-auth .desktop-auth-buttons { display: none !important; }
-  nav > .nav-auth .guest-auth-buttons { display: none !important; }
-  nav > .nav-auth .cart-icon-mobile { padding: 10px 14px !important; font-size: 16px !important; }
-  nav { padding: 0 20px !important; }
+  .main-nav > .nav-links { display: none !important; }
+  .main-nav > .nav-auth .hamburger { display: block !important; }
+  .main-nav > .nav-auth .desktop-auth-buttons { display: none !important; }
+  .main-nav > .nav-auth .guest-auth-buttons { display: none !important; }
+  .main-nav > .nav-auth .cart-icon-mobile { padding: 10px 14px !important; font-size: 16px !important; }
+  .main-nav { padding: 0 40px; }
+}
+@media (max-width: 768px) {
+  .main-nav { padding: 0 20px; }
+}
+@media (max-width: 480px) {
+  .main-nav { padding: 0 16px; }
 }
 </style>
