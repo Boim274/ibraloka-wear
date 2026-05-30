@@ -846,7 +846,8 @@
         .sidebar.open {
             transform: translateX(0);
         }
-        .sidebar-hamburger {
+
+    .sidebar-hamburger {
             display: block;
         }
         .main-content {
