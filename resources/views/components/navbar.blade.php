@@ -206,8 +206,8 @@
           @else
           <div style="border-top:1px solid rgba(201,168,76,0.08);margin-top:16px;padding:16px 12px 8px;display:flex;flex-direction:column;gap:10px">
             <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(250,248,244,0.25);font-weight:600;padding:0 0 4px">Akun</div>
-            <a href="#" onclick="openModal('signin'); return false;" style="display:block;padding:12px;border-radius:8px;font-size:13px;font-weight:600;text-align:center;text-decoration:none;border:1px solid rgba(201,168,76,0.2);color:var(--color-surface-50);transition:all .2s">Sign In</a>
-            <a href="#" onclick="openModal('signup'); return false;" style="display:block;padding:12px;border-radius:8px;font-size:13px;font-weight:600;text-align:center;text-decoration:none;background:var(--color-gold);color:#000;border:none;transition:all .2s">Daftar Sekarang</a>
+            <a href="#" @click="open=false; openModal('signin')" style="display:block;padding:12px;border-radius:8px;font-size:13px;font-weight:600;text-align:center;text-decoration:none;border:1px solid rgba(201,168,76,0.2);color:var(--color-surface-50);transition:all .2s">Sign In</a>
+            <a href="#" @click="open=false; openModal('signup')" style="display:block;padding:12px;border-radius:8px;font-size:13px;font-weight:600;text-align:center;text-decoration:none;background:var(--color-gold);color:#000;border:none;transition:all .2s">Daftar Sekarang</a>
           </div>
           @endauth
         </div>
